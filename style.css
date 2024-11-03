@@ -7,38 +7,3 @@
   *{
     margin: 0;
   }
-  
-header{
-    display: flex;
-    background: linear-gradient(45deg,#6495ED,#00BFFF);
-    font-family: "Londrina Sketch", sans-serif;
-    color: #FFFFFF;
-    height: 6rem;
-}
-
-@keyframes h1moving{
-    0% {
-        transform: translateY(1rem);
-    }
-    25% {
-        transform: translateY(2rem);
-    }
-    75%{
-        transform: translateY(3rem);
-    }
-    100% {
-        transform: translateY(4rem);
-    }
-}
-h1{
-    margin: 0 0 0 2rem;
-    font-size: 4rem;
-    animation: h1moving 5s ease-in infinite;
-}
-
-
-section{
-    height: 100vh;
-    width: 100vw;
-    background: linear-gradient(180deg,#00BFFF,#6495ED,#1E90FF,#000080);
-}
