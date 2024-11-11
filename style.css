@@ -59,4 +59,34 @@
     text-decoration: underline;
   }
 
+  #gameInGameContainer{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  #ticTacToeContainer{
+    /* align-items: center; */
+    background: linear-gradient(45deg, rgb(14, 0, 16), rgb(56, 35, 59));
+    width: 55vw;
+    height: 90vh;
+    border-radius: 10%;
+  }
+
+  #cellContainer {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    width: 225px;
+    margin: auto;
+  }
+
+  .cell {
+    width: 75px;
+    height: 75px;
+    border: 2px solid;
+    box-shadow: 0 0 0 2px;
+    line-height: 75px;
+    font-size: 50px;
+    cursor: pointer;
+  }
   

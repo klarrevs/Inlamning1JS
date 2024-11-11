@@ -86,10 +86,11 @@ function loadTakeAdvantageOfTheSituationScene() {
 
 function loadticTacToeScene() {
   sceneContainer.style.display = 'none';
-  document.body.style.backgroundImage =
+  gameInGameContainer.style.display = null;
+  document.body.style.backgroundImage ='';
   sceneText.textContent = 'You\'re approaching the croupier, asking to play Tic Tac Toe.';
-  button1.textContent = 'Leave the nightclub.'
-  button2.textContent = 'Go back to previous scene.'
+  button1.textContent = 'Leave the nightclub.';
+  button2.textContent = 'Go back to previous scene.';
   }
  //function loadDanceFloorScene(){
 //}
