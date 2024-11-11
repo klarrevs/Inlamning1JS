@@ -1,10 +1,21 @@
-window.addEventListener("DOMContentLoaded", loadMainScene);
+window.addEventListener("DOMContentLoaded", main);
 
 const sceneText = document.getElementById("sceneText");
 const button1 = document.getElementById("button1");
 const button2 = document.getElementById("button2");
 
-function loadMainScene() {
+function main () {
+  loadMainScene();
+}
+
+function loadFirstScene() {
+  document.body.style.backgroundImage = "";
+  sceneText.textContent = 'Welcome to the On and on and on- game. The game is based on Abbas music, to be more precise - the lyrics to the song On and on and on. Some things are added, some removed. Let\'s start.';
+  button1.textContent = "Start";
+  button2.style.display = "none";
+}
+
+function loadSomethingBadIsHappeningScene() {
   document.body.style.backgroundImage = "url('../Assets/startingscene.webp')";
   sceneText.textContent =
     'You are at a party and this fella says to you: "Something bad is happening, I\'m sure you do agree. People care for nothing, no respect for human rights. Evil times are coming, we are in for darker nights." What is your next move?';
@@ -42,10 +53,10 @@ function loadWhatIsWrongWhatIsRightScene() {
   sceneText.textContent =
     'You say: "I just can\'t believe it, boy I think it\'s great. Brother can you tell me what is right and what is wrong?" He says: "Keep on rocking baby, till the night is gone"';
   button1.textContent = "Keep on rocking";
-  button2.textContent = "Leave to play BlackJack";
+  button2.textContent = "Leave to play a game.";
 
   button1.onclick = loadDanceFloorScene;
-  button2.onclick = loadBlackJackScene;
+  button2.onclick = loadticTacToeScene;
 }
 
 function loadOtherGuyScene() {
@@ -53,10 +64,10 @@ function loadOtherGuyScene() {
   sceneText.textContent =
     "Over in the corner, you can see this other guy. He is kinda flirty, he is giving you the eye.";
   button1.textContent = "Take advantage of the situation";
-  button2.textContent = "Leave to play BlackJack";
+  button2.textContent = "Leave to play a game.";
 
   button1.onclick = loadTakeAdvantageOfTheSituationScene;
-  button2.onclick = loadBlackJackScene;
+  button2.onclick = loadticTacToeScene;
 }
 
 function loadTakeAdvantageOfTheSituationScene() {
@@ -70,10 +81,12 @@ function loadTakeAdvantageOfTheSituationScene() {
   button2.onclick = loadDanceFloorScene;
 }
 
-// function loadBlackJackScene() {
-//     document.body.style.backgroundImage =
-
-// }
+function loadticTacToeScene() {
+  document.body.style.backgroundImage =
+  sceneText.textContent = 'You\'re approaching the croupier, asking to play Tic Tac Toe.';
+  button1.textContent = 'Leave the nightclub.'
+  button2.textContent = 'Go back to previous scene.'
+ }
 // function loadDanceFloorScene(){
-
+//
 //}

@@ -58,3 +58,15 @@
   .buttons:hover{
     text-decoration: underline;
   }
+
+  .ticTacToeContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, rgb(14, 0, 16), rgb(56, 35, 59));
+    width: 40vw;
+    height: 80vh;
+    border-radius: 10%;
+  
+  }
