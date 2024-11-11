@@ -5,7 +5,7 @@ const button1 = document.getElementById("button1");
 const button2 = document.getElementById("button2");
 
 function main () {
-  loadMainScene();
+  loadFirstScene();
 }
 
 function loadFirstScene() {
@@ -13,6 +13,8 @@ function loadFirstScene() {
   sceneText.textContent = 'Welcome to the On and on and on- game. The game is based on Abbas music, to be more precise - the lyrics to the song On and on and on. Some things are added, some removed. Let\'s start.';
   button1.textContent = "Start";
   button2.style.display = "none";
+
+  button1.onclick = loadSomethingBadIsHappeningScene;
 }
 
 function loadSomethingBadIsHappeningScene() {
@@ -23,6 +25,7 @@ function loadSomethingBadIsHappeningScene() {
   button2.textContent = "Join Amnesty";
 
   button1.style.display = null;
+  button2.style.display = null;
 
   button1.onclick = loadImpendingDoomScene;
   button2.onclick = loadAmnestyScene;
@@ -34,7 +37,7 @@ function loadAmnestyScene() {
   button1.style.display = "none";
   button2.textContent = "Start over";
 
-  button2.onclick = loadMainScene;
+  button2.onclick = loadSomethingBadIsHappeningScene;
 }
 
 function loadImpendingDoomScene() {
@@ -82,11 +85,11 @@ function loadTakeAdvantageOfTheSituationScene() {
 }
 
 function loadticTacToeScene() {
+  sceneContainer.style.display = 'none';
   document.body.style.backgroundImage =
   sceneText.textContent = 'You\'re approaching the croupier, asking to play Tic Tac Toe.';
   button1.textContent = 'Leave the nightclub.'
   button2.textContent = 'Go back to previous scene.'
- }
-// function loadDanceFloorScene(){
-//
+  }
+ //function loadDanceFloorScene(){
 //}
