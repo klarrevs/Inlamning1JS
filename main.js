@@ -4,12 +4,12 @@ const sceneText = document.getElementById("sceneText");
 const button1 = document.getElementById("button1");
 const button2 = document.getElementById("button2");
 
-function main () {
+function main() {
   loadFirstScene();
 }
 
 function loadFirstScene() {
-  document.body.style.backgroundImage = "";
+  document.body.style.backgroundImage = "url('../Assets/startingscene.webp')";
   sceneText.textContent = 'Welcome to the On and on and on- game. The game is based on Abbas music, to be more precise - the lyrics to the song On and on and on. Some things are added, some removed. Let\'s start.';
   button1.textContent = "Start";
   button2.style.display = "none";
@@ -59,7 +59,7 @@ function loadWhatIsWrongWhatIsRightScene() {
   button2.textContent = "Leave to play a game.";
 
   button1.onclick = loadDanceFloorScene;
-  button2.onclick = loadticTacToeScene;
+  button2.onclick = loadTicTacToeScene;
 }
 
 function loadOtherGuyScene() {
@@ -70,7 +70,7 @@ function loadOtherGuyScene() {
   button2.textContent = "Leave to play a game.";
 
   button1.onclick = loadTakeAdvantageOfTheSituationScene;
-  button2.onclick = loadticTacToeScene;
+  button2.onclick = loadTicTacToeScene;
 }
 
 function loadTakeAdvantageOfTheSituationScene() {
@@ -80,17 +80,73 @@ function loadTakeAdvantageOfTheSituationScene() {
   button1.textContent = "I was not exactly waiting for the bus.";
   button2.textContent = "Nope!";
 
-  button1.onclick =
+  button1.onclick = loadNotWaitingForTheBus;
   button2.onclick = loadDanceFloorScene;
 }
 
-function loadticTacToeScene() {
+function loadNotWaitingForTheBus() {
+  document.body.style.backgroundImage = "url('..Assets/....')";
+  sceneText.textContent = "";
+  button1.textContent = 'End game';
+  button2.textContent = 'Restart game';
+
+  button1.onclick = //En slutscen tack och hej eller bara vit sida?;
+  button2.onclick = loadFirstScene;
+}
+
+function loadDanceFloorScene() {
+  document.body.style.backgroundImage = "url('../Assets/dancefloor.webp')";
+  sceneText.textContent = 'You\'ll keep on dancing the whole night!'
+  button1.textContent = 'End game';
+  button2.textContent = 'Restart game';
+
+  button1.onclick = //En slutscen tack och hej eller bara vit sida?;
+  button2.onclick = loadFirstScene; 
+}
+
+function loadTicTacToeScene() {
+  const cells = document.querySelectorAll('.cell');
+  const statusText = document.getElementById('statusText');
+  const restartButton = document.getElementById('restartButton');
+  const winConditions = [
+    [0, 1, 2], //vågrätt
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6], //lodrätt
+    [1, 4, 7],
+    [2, 5, 8], 
+    [0, 4, 8], //diagonalt
+    [2, 4, 6]
+  ];
+  let options = ['', '', '', '', '', '', '', '','']; // tom array för varje rutval(9 st)
+  let currentPlayer = 'X';
+  let running = false;
+
   sceneContainer.style.display = 'none';
   gameInGameContainer.style.display = null;
   document.body.style.backgroundImage ='';
   sceneText.textContent = 'You\'re approaching the croupier, asking to play Tic Tac Toe.';
   button1.textContent = 'Leave the nightclub.';
   button2.textContent = 'Go back to previous scene.';
+
+  function startTicTacToe() {
+
   }
- //function loadDanceFloorScene(){
-//}
+
+  function clickedCell() {
+
+  }
+
+  function cellChosen() {
+
+  }
+
+  function changePlayer() {
+
+  }
+
+  function restartGame() {
+
+  }
+}
+  
