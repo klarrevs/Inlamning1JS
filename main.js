@@ -5,9 +5,10 @@ const button1 = document.getElementById("button1");
 const button2 = document.getElementById("button2");
 const abbaInput = document.getElementById('abbaInput');
 let abbaList = [];
+const arrayContainer = document.getElementById('arrayContainer');
 
 function main() {
-  loadSaveAbbaSongs();
+  loadTicTacToeScene();
 }
 
 function loadFirstScene() {
@@ -133,23 +134,7 @@ function loadDanceFloorScene() {
 }
 
 function loadTicTacToeScene() {
-  const cells = document.querySelectorAll('.cell');
-  const statusText = document.getElementById('statusText');
-  const restartButton = document.getElementById('restartButton');
-  const winConditions = [
-    [0, 1, 2], //vågrätt
-    [3, 4, 5],
-    [6, 7, 8],
-    [0, 3, 6], //lodrätt
-    [1, 4, 7],
-    [2, 5, 8], 
-    [0, 4, 8], //diagonalt
-    [2, 4, 6]
-  ];
-  let options = ['', '', '', '', '', '', '', '','']; // tom array för varje rutval(9 st)
-  let currentPlayer = 'X';
-  let running = false;
-
+  initializeGame();
   sceneContainer.style.display = 'none';
   gameInGameContainer.style.display = null;
   document.body.style.backgroundImage = "url('../Assets/tictactoe.webp')";
@@ -161,31 +146,11 @@ function loadTicTacToeScene() {
 
   button1.onclick = loadSaveAbbaSongs;
   button2.onclick = loadOtherGuyScene, loadWhatIsWrongWhatIsRightScene;
-
-  function startTicTacToe() {
-
-  }
-
-  function clickedCell() {
-
-  }
-
-  function cellChosen() {
-
-  }
-
-  function changePlayer() {
-
-  }
-
-  function restartGame() {
-
-  }
 }
 
 function loadSaveAbbaSongs() {
   document.body.style.backgroundImage = "url('../Assets/abba.webp')";
-  sceneText.textContent = 'Before you leave us for tonight, we would like you to write the titles of a few other ABBA songs that you know of.';
+  sceneText.textContent = 'Before you leave us for tonight, we would like you to write the title of your favourite ABBA song.';
   button1.textContent ='Bye';
   
   button2.style.display = 'none';
@@ -193,9 +158,19 @@ function loadSaveAbbaSongs() {
   inputContainer.style.display = null;
 
   saveSongButton.onclick = saveAbbaSongs; 
+  button1.onclick = loadByeScene;
 }
 
-function saveAbbaSongs() {
+function saveAbbaSongs(event) {
+  event.preventDefault();
   abbaList.push(abbaInput.value);
   abbaInput.value = '';
+  localStorage.setItem('abbaInput', abbaInput.value);
+  
+}
+
+function loadByeScene() {
+  arrayContainer.style.display = null;
+  gameInGameContainer.style.display = 'none';
+  inputContainer.style.display = 'none';
 }

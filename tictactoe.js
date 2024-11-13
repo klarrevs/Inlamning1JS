@@ -1,4 +1,5 @@
 window.addEventListener('DOMContentLoaded', initializeGame);
+// window.initializeGame = initializeGame;
 
 const cells = document.querySelectorAll('.cell');
   const statusText = document.getElementById('statusText');
@@ -18,11 +19,42 @@ const cells = document.querySelectorAll('.cell');
   let running = false;
 
   function initializeGame() {
-    running = true;
     cells.forEach(function (cell) {
-      cell.addEventListener('click', clickedCell);
+      cell.addEventListener('click', cellClicked);
     });
     restartButton.addEventListener('click',restartGame);
     statusText.textContent = `${currentPlayer}'s turn`; //template literal
+    running = true;
+
+  }
+  function cellClicked() {
+    const cellIndex = this.getAttribute('cellIndex');
+
+    if(options[cellIndex] != '' || !running){
+      return;
+    }
+    updateCell(this, cellIndex);
+    checkWinner();
+
+}
+function updateCell(cell, index) {
+    options[index] = currentPlayer;
+    cell.textContent = currentPlayer;
+  
+}
+function changePlayer() {
+    currentPlayer = (currentPlayer === 'X') ? 'O' : 'X';
+    statusText.textContent = `${currentPlayer}'s turn`;
+  
+}
+function checkWinner() {
+    let roundWon = false;
+
+    for(let i=0; i < winConditions.length; i++){
+      const condition = winConditions[i];
+    }
+
+}
+ function restartGame() {
 
   }
