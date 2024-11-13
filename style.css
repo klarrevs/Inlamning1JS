@@ -63,6 +63,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    font-family: "Homenaje", sans-serif;
   }
 
   #ticTacToeContainer{
@@ -79,6 +80,7 @@
     grid-template-columns: repeat(3, auto);
     width: 225px;
     margin: auto;
+    color: azure;
   }
 
   .cell {
@@ -92,8 +94,10 @@
     margin: 0;
   }
 
-  #restartButton{
-   
+  #statusText{
+    color: azure;
+    font-size: 25px;
+
   }
 
   .inputContainer{
