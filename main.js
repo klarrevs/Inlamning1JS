@@ -8,7 +8,7 @@ let abbaList = [];
 const arrayContainer = document.getElementById('arrayContainer');
 
 function main() {
-  loadTicTacToeScene();
+  loadNotWaitingForTheBus();
 }
 
 function loadFirstScene() {
@@ -108,8 +108,8 @@ function loadTakeAdvantageOfTheSituationScene() {
 }
 
 function loadNotWaitingForTheBus() {
-  document.body.style.backgroundImage = "url('..Assets/....')";
-  sceneText.textContent = "";
+  document.body.style.backgroundImage = "url('../Assets/notwaitingforthebus.webp')";
+  sceneText.textContent = "He says: If you\'re going somewhere can I come along? You say: Keep on rocking baby 'til the night is gone";
   button1.textContent = 'End game';
   button2.textContent = 'Restart game';
   
