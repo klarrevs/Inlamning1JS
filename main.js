@@ -6,9 +6,12 @@ const button2 = document.getElementById("button2");
 const abbaInput = document.getElementById('abbaInput');
 let abbaList = [];
 const arrayContainer = document.getElementById('arrayContainer');
+const valueList = document.getElementById('valueList');
+const saveSongButton = document.getElementById('saveSongButton');
+saveSongButton.addEventListener('click', saveAbbaSongs);
 
 function main() {
-  loadNotWaitingForTheBus();
+  loadFirstScene();
 }
 
 function loadFirstScene() {
@@ -18,6 +21,7 @@ function loadFirstScene() {
   button2.style.display = "none";
   gameInGameContainer.style.display = 'none';
   inputContainer.style.display = 'none';
+  arrayContainer.style.display = 'none';
 
   button1.onclick = loadSomethingBadIsHappeningScene;
 }
@@ -150,23 +154,37 @@ function loadTicTacToeScene() {
 
 function loadSaveAbbaSongs() {
   document.body.style.backgroundImage = "url('../Assets/abba.webp')";
-  sceneText.textContent = 'Before you leave us for tonight, we would like you to write the title of your favourite ABBA song.';
+  sceneText.textContent = 'Before you leave us for tonight, we would like you to write the title of your three favourite ABBA songs.';
   button1.textContent ='Bye';
   
+  sceneContainer.style.justifyContent = 'space-between';
   button2.style.display = 'none';
   gameInGameContainer.style.display = 'none';
   inputContainer.style.display = null;
+  arrayContainer.style.display = null;
 
-  saveSongButton.onclick = saveAbbaSongs; 
   button1.onclick = loadByeScene;
 }
 
-function saveAbbaSongs(event) {
-  event.preventDefault();
+function updateList (){
+  valueList.textContent ='';
+
+  abbaList.forEach(function(value, index){
+    const listItem = document.createElement('li');
+    listItem.textContent = (index + 1) + '. '+ value;
+    valueList.appendChild(listItem);
+  });
+}
+function saveAbbaSongs() {
+  const newValue = abbaInput.value.trim();
+
+  if(newValue) {
   abbaList.push(abbaInput.value);
   abbaInput.value = '';
-  localStorage.setItem('abbaInput', abbaInput.value);
-  
+  console.log(abbaList);
+
+  updateList();
+  }
 }
 
 function loadByeScene() {
