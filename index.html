@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>On and on and on</title>
     <link rel="stylesheet" href="style.css">
+    <script defer src="tictactoe.js"></script>
     <script defer src="main.js"></script>
     <!--Google fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,12 +14,16 @@
 </head>
 <body>
     <div id="sceneContainer">
+        <div id="arrayContainer">
+            <p>These are your top 3 ABBA songs:</p>
+            <ul id="valueList"></ul>
+        </div>
         <div class="gameContainer" id="gameContainer">
             <div class="textContainer">
             <p id="sceneText"></p>
             </div> 
             <div id="inputContainer" class="inputContainer">
-                <input id="abbaInput" type="text" name="abbaInput" placeholder="Write your ABBA songs here...">
+                <input id="abbaInput" type="text" name="abbaInput" placeholder="Write your ABBA song here...">
                 <button type="submit" id="saveSongButton" class="buttons">Save song</button>
             </div>
             <div class="buttonContainer" id="buttonContainer">
@@ -29,7 +34,7 @@
     </div>
     <div id="gameInGameContainer">
         <div id="ticTacToeContainer">
-            <p id="sceneText"></p>
+            <p id="sceneText">You're approaching the croupier, asking to play Tic Tac Toe.</p>
             <div id="cellContainer">
                 <div cellIndex="0" class="cell"></div>
                 <div cellIndex="1" class="cell"></div>
