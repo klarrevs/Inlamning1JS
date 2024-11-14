@@ -1,10 +1,12 @@
 window.addEventListener('DOMContentLoaded', initializeGame);
-// window.initializeGame = initializeGame;
 
 const cells = document.querySelectorAll('.cell');
-  const statusText = document.getElementById('statusText');
-  const restartButton = document.getElementById('restartButton');
-  const winConditions = [
+const statusText = document.getElementById('statusText');
+const restartButton = document.getElementById('restartButton');
+/** Array innehållande arrays med möjliga sätt att vinna.
+ * @const {index}
+ */
+const winConditions = [
     [0, 1, 2], //vågrätt
     [3, 4, 5],
     [6, 7, 8],
@@ -14,11 +16,22 @@ const cells = document.querySelectorAll('.cell');
     [0, 4, 8], //diagonalt
     [2, 4, 6]
   ];
-  let options = ['', '', '', '', '', '', '', '','']; // tom array för varje rutval(9 st)
-  let currentPlayer = 'X';
-  let running = false;
+/** Tom array för varje ruta (cell) 0-8.
+ * 
+ * @type {number[]}
+ */
+let options = ['', '', '', '', '', '', '', '','']; // tom array för varje rutval(9 st)
+let currentPlayer = 'X';
+let running = false;
 
-  function initializeGame() {
+/** Sätter eventlyssnare (klick) på varje ruta (cell) samt på restartButton. 
+ * Anropar restartGame-function via restartButton.
+ * Uppdaterar statusText för att visa vems tur det är.
+ * Sätter running till true för att visa att spelet är igång.
+ * 
+ * @function
+ */
+function initializeGame() {
     cells.forEach(function (cell) {
       cell.addEventListener('click', cellClicked);
     });
@@ -27,7 +40,7 @@ const cells = document.querySelectorAll('.cell');
     running = true;
 
   }
-  function cellClicked() {
+function cellClicked() {
     const cellIndex = this.getAttribute('cellIndex');
 
     if(options[cellIndex] != '' || !running){
@@ -35,7 +48,6 @@ const cells = document.querySelectorAll('.cell');
     }
     updateCell(this, cellIndex);
     checkWinner();
-
 }
 function updateCell(cell, index) {
     options[index] = currentPlayer;
@@ -47,6 +59,13 @@ function changePlayer() {
     statusText.textContent = `${currentPlayer}'s turn`;
   
 }
+/** Går igenom de olika vinstvillkoren. Kontrollerar om de matchar villkoren i if-satsen. 
+ * Är rutorna tomma fortsätter spelet. Om villkoren för vinst uppfylls sätts running = false.
+ * Om options inte har tomma rutor ändras statusText till `draw` och spelomgången avslutas genom att running = false. 
+ * Om inget stämmer byts spelare genom att anropa funktionen changePlayer.
+ * 
+ * @function
+ */
 function checkWinner() {
     let roundWon = false;
 
@@ -65,7 +84,7 @@ function checkWinner() {
       }
     }
     if(roundWon){
-        statusText.textContent = `${currentPlayer} wins`;
+        statusText.textContent = `Woho! ${currentPlayer} wins!`;
         running = false;
     }
     else if(!options.includes('')){
@@ -77,6 +96,12 @@ function checkWinner() {
     }
 
 }
- function restartGame() {
-
-  }
+function restartGame() {
+    currentPlayer = 'X';
+    options = ['', '', '', '', '', '', '', '',''];
+    statusText.textContent = `${currentPlayer}'s turn`;
+    cells.forEach(function (cell) {
+      cell.textContent = '';
+      running = true;
+    }
+)};
