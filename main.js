@@ -4,6 +4,9 @@ const sceneText = document.getElementById("sceneText");
 const button1 = document.getElementById("button1");
 const button2 = document.getElementById("button2");
 const abbaInput = document.getElementById('abbaInput');
+/**Array som lagrar användarens input values
+ * @let {string}
+ */
 let abbaList = [];
 const arrayContainer = document.getElementById('arrayContainer');
 const valueList = document.getElementById('valueList');
@@ -144,12 +147,11 @@ function loadTicTacToeScene() {
   document.body.style.backgroundImage = "url('../Assets/tictactoe.webp')";
   sceneText.textContent = 'You\'re approaching the croupier, asking to play Tic Tac Toe.';
   button1.textContent = 'Leave the nightclub';
-  button2.textContent = 'Go back to previous scene';
-
+  
+  button2.style.display = 'none';
   inputContainer.style.display = 'none';
 
   button1.onclick = loadSaveAbbaSongs;
-  button2.onclick = loadOtherGuyScene, loadWhatIsWrongWhatIsRightScene;
 }
 
 function loadSaveAbbaSongs() {
@@ -165,7 +167,10 @@ function loadSaveAbbaSongs() {
 
   button1.onclick = loadByeScene;
 }
-
+/** Uppdaterar valueList som visas grafiskt på sidan, med värden från arrayen abbaList.
+ * Skapar <li>-tagg i valueList för varje value användaren submittar.
+ * @function
+ */
 function updateList (){
   valueList.textContent ='';
 
@@ -175,6 +180,12 @@ function updateList (){
     valueList.appendChild(listItem);
   });
 }
+/** sparar värdet från inputfältet (abbaInput) till arrayen abbaList. 
+ * kontrollerar att det finns något i inputfältet, lägger till det i abbaList.
+ * Rensar inputfältet.
+ * Anropar updateList för att uppdatera listan som visas grafiskt. 
+ * @function
+ */
 function saveAbbaSongs() {
   const newValue = abbaInput.value.trim();
 
@@ -188,7 +199,9 @@ function saveAbbaSongs() {
 }
 
 function loadByeScene() {
-  arrayContainer.style.display = null;
+  document.body.style.backgroundImage = "url('../Assets/abbagif.gif')";
+  sceneContainer.style.display = 'none';
+  arrayContainer.style.display = 'none';
   gameInGameContainer.style.display = 'none';
   inputContainer.style.display = 'none';
 }
