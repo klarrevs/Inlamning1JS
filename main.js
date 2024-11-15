@@ -18,7 +18,7 @@ function main() {
 }
 
 function loadFirstScene() {
-  document.body.style.backgroundImage = "url('../Assets/startingscene.webp')";
+  document.body.style.backgroundImage = "url('Assets/startingscene.webp')";
   sceneText.textContent = 'Welcome to the On and on and on- game. The game is based on Abbas music, to be more precise - the lyrics to the song On and on and on. Some things are added, some removed. Let\'s start.';
   button1.textContent = "Start";
   button2.style.display = "none";
@@ -30,7 +30,7 @@ function loadFirstScene() {
 }
 
 function loadSomethingBadIsHappeningScene() {
-  document.body.style.backgroundImage = "url('../Assets/startingscene.webp')";
+  document.body.style.backgroundImage = "url('Assets/startingscene.webp')";
   sceneText.textContent =
     'You are at a party and this fella says to you: "Something bad is happening, I\'m sure you do agree. People care for nothing, no respect for human rights. Evil times are coming, we are in for darker nights." What is your next move?';
   button1.textContent = "Answer";
