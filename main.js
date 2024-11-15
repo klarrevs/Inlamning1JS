@@ -46,7 +46,7 @@ function loadSomethingBadIsHappeningScene() {
 }
 
 function loadAmnestyScene() {
-  document.body.style.backgroundImage = "url('../Assets/amnesty.jpg')";
+  document.body.style.backgroundImage = "url('Assets/amnesty.jpg')";
   sceneText.textContent = "You have joined Amnesty.";
   button1.style.display = "none";
   button2.textContent = "Start over";
@@ -59,7 +59,7 @@ function loadAmnestyScene() {
 }
 
 function loadImpendingDoomScene() {
-  document.body.style.backgroundImage = "url('../Assets/impendingdoom.webp')";
+  document.body.style.backgroundImage = "url('Assets/impendingdoom.webp')";
   sceneText.textContent =
     'You say: "Who are you to talk about impending doom?" He gets kinda wary as he looks around the room. He says: "I\'m a minister, a big shot in the state..."';
   button1.textContent = "Answer";
@@ -73,7 +73,7 @@ function loadImpendingDoomScene() {
 }
 
 function loadWhatIsWrongWhatIsRightScene() {
-  document.body.style.backgroundImage = "url('../Assets/whatiswrongwhatisright.webp')";
+  document.body.style.backgroundImage = "url('Assets/whatiswrongwhatisright.webp')";
   sceneText.textContent =
     'You say: "I just can\'t believe it, boy I think it\'s great. Brother can you tell me what is right and what is wrong?" He says: "Keep on rocking baby, till the night is gone"';
   button1.textContent = "Keep on rocking";
@@ -87,7 +87,7 @@ function loadWhatIsWrongWhatIsRightScene() {
 }
 
 function loadOtherGuyScene() {
-  document.body.style.backgroundImage = "url('../Assets/otherguy.jpeg')";
+  document.body.style.backgroundImage = "url('Assets/otherguy.jpeg')";
   sceneText.textContent =
     "Over in the corner, you can see this other guy. He is kinda flirty, he is giving you the eye.";
   button1.textContent = "Take advantage of the situation";
@@ -101,7 +101,7 @@ function loadOtherGuyScene() {
 }
 
 function loadTakeAdvantageOfTheSituationScene() {
-  document.body.style.backgroundImage = "url('../Assets/advantageofthesituation.webp')";
+  document.body.style.backgroundImage = "url('Assets/advantageofthesituation.webp')";
   sceneText.textContent = 
     "So you take advantage of the fact that you're a star. You shake your hair and take a casual stroll up to the bar. And as sure as hell this guy was coming up to you. He says: \"Who am I and who are you and who are we? What's our situation, do we have some time for us?\" What will your answer be?";
   button1.textContent = "I was not exactly waiting for the bus.";
@@ -115,7 +115,7 @@ function loadTakeAdvantageOfTheSituationScene() {
 }
 
 function loadNotWaitingForTheBus() {
-  document.body.style.backgroundImage = "url('../Assets/notwaitingforthebus.webp')";
+  document.body.style.backgroundImage = "url('Assets/notwaitingforthebus.webp')";
   sceneText.textContent = "He says: If you\'re going somewhere can I come along? You say: Keep on rocking baby 'til the night is gone";
   button1.textContent = 'End game';
   button2.textContent = 'Restart game';
@@ -128,7 +128,7 @@ function loadNotWaitingForTheBus() {
 }
 
 function loadDanceFloorScene() {
-  document.body.style.backgroundImage = "url('../Assets/dancefloor.webp')";
+  document.body.style.backgroundImage = "url('Assets/dancefloor.webp')";
   sceneText.textContent = 'You\'ll keep on dancing the whole night!'
   button1.textContent = 'End game';
   button2.textContent = 'Restart game';
@@ -142,7 +142,7 @@ function loadDanceFloorScene() {
 
 function loadTicTacToeScene() {
   const container = document.getElementById("gameInGameContainer");
-  document.body.style.backgroundImage = "url('../Assets/tictactoe.webp')";
+  document.body.style.backgroundImage = "url('Assets/tictactoe.webp')";
   container.querySelector("#sceneText").textContent = 'You\'re approaching the croupier, asking to play Tic Tac Toe.';
   container.querySelector('#button1').textContent = 'Leave the nightclub';
 
@@ -157,7 +157,7 @@ function loadTicTacToeScene() {
 }
 
 function loadSaveAbbaSongs() {
-  document.body.style.backgroundImage = "url('../Assets/abba.webp')";
+  document.body.style.backgroundImage = "url('Assets/abba.webp')";
   sceneText.textContent = 'Before you leave us for tonight, we would like you to write the title of your three favourite ABBA songs.';
   button1.textContent ='Bye';
   
@@ -202,7 +202,7 @@ function saveAbbaSongs() {
 }
 
 function loadByeScene() {
-  document.body.style.backgroundImage = "url('../Assets/abbagif.gif')";
+  document.body.style.backgroundImage = "url('Assets/abbagif.gif')";
   sceneContainer.style.display = 'none';
   arrayContainer.style.display = 'none';
   gameInGameContainer.style.display = 'none';
