@@ -5,7 +5,7 @@ const button1 = document.getElementById("button1");
 const button2 = document.getElementById("button2");
 const abbaInput = document.getElementById('abbaInput');
 /**Array som lagrar användarens input values
- * @let {string}
+ * @type {string[]}
  */
 let abbaList = [];
 const arrayContainer = document.getElementById('arrayContainer');
@@ -61,7 +61,7 @@ function loadAmnestyScene() {
 function loadImpendingDoomScene() {
   document.body.style.backgroundImage = "url('../Assets/impendingdoom.webp')";
   sceneText.textContent =
-    'You say: "Who are you to talk about an impending doom?" He gets kinda wary as he looks around the room. He says: "I\'m a minister, a big shot in the state..."';
+    'You say: "Who are you to talk about impending doom?" He gets kinda wary as he looks around the room. He says: "I\'m a minister, a big shot in the state..."';
   button1.textContent = "Answer";
   button2.textContent = "Ignore";
   
@@ -141,17 +141,19 @@ function loadDanceFloorScene() {
 }
 
 function loadTicTacToeScene() {
-  initializeGame();
+  const container = document.getElementById("gameInGameContainer");
+  document.body.style.backgroundImage = "url('../Assets/tictactoe.webp')";
+  container.querySelector("#sceneText").textContent = 'You\'re approaching the croupier, asking to play Tic Tac Toe.';
+  container.querySelector('#button1').textContent = 'Leave the nightclub';
+
+  container.querySelector("#button1").onclick = loadSaveAbbaSongs;
+
   sceneContainer.style.display = 'none';
   gameInGameContainer.style.display = null;
-  document.body.style.backgroundImage = "url('../Assets/tictactoe.webp')";
-  sceneText.textContent = 'You\'re approaching the croupier, asking to play Tic Tac Toe.';
-  button1.textContent = 'Leave the nightclub';
-  
   button2.style.display = 'none';
   inputContainer.style.display = 'none';
 
-  button1.onclick = loadSaveAbbaSongs;
+  initializeGame();
 }
 
 function loadSaveAbbaSongs() {
@@ -164,6 +166,7 @@ function loadSaveAbbaSongs() {
   gameInGameContainer.style.display = 'none';
   inputContainer.style.display = null;
   arrayContainer.style.display = null;
+  sceneContainer.style.display = null;
 
   button1.onclick = loadByeScene;
 }
