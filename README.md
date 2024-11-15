@@ -7,3 +7,5 @@ Det här projektet är ett typ av spel där användaren kan interagera med varje
 Det här är ett projekt utifrån en uppgift där en interaktiv värld skulle skapas. Information presenteras via text. Både knappar och textfält finns för att möjliggöra interaktion och som användare får man ett par olika val i nästan varje scen.
 
 ## Demolänk
+
+https://klarrevs.github.io/Inlamning1JS/
